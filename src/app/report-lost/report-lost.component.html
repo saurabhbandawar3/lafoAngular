@@ -12,7 +12,9 @@
               <label>Item:</label>
             </div>
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="item" value="Lost" disabled>
+              <select placeholder="Item type" [(ngModel)]="i.item">
+                <option value="Lost" selected>Lost</option>
+              </select>
             </div>
           </div>
 
@@ -21,7 +23,7 @@
               <label>Item Type:</label>
             </div>
             <div class="col-sm-3">
-              <select placeholder="Item type">
+              <select placeholder="Item type" [(ngModel)]="i.itemType">
                 <option *ngFor="let t of itypes" [value]="t.value">
                   {{ t.viewValue }}
                 </option>
@@ -35,25 +37,25 @@
               <label for="desc">Item Description:</label>
             </div>
             <div class="col-sm-3">
-              <textarea id="desc" placeholder="e.g company,type..."></textarea>
+              <textarea id="desc" [(ngModel)]="i.idescription"placeholder="e.g company,type..."></textarea>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-3">
-              <label for="venue">Vanue Lost:</label>
+              <label>Vanue Lost:</label>
             </div>
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="venue" placeholder="e.g Library">
+              <input type="text" class="form-control" [(ngModel)]="i.ivanue" placeholder="e.g Library">
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-3">
-              <label for="date">Date Lost:</label>
+              <label>Date Lost:</label>
             </div>
             <div class="col-sm-3">
-              <input type="date" class="form-control" id="date" placeholder="e.g Library">
+              <input type="date" class="form-control" [(ngModel)]="i.dateLost" placeholder="e.g Library">
             </div>
           </div>
 
@@ -78,11 +80,11 @@
         <div class="row">
 
           <div class="col-sm-3">
-            <label for="name">Full Name:</label>
+            <label>Full Name:</label>
           </div>
 
           <div class="col-sm-3">
-            <input type="text" class="form-control" id="name" placeholder="e.g Full Name">
+            <input type="text" class="form-control" [(ngModel)]="i.uname" placeholder="e.g Full Name">
           </div>
 
         </div>
@@ -90,11 +92,11 @@
         <div class="row">
 
           <div class="col-sm-3">
-            <label for="mobile">Mobile Number:</label>
+            <label>Mobile Number:</label>
           </div>
 
           <div class="col-sm-3">
-            <input type="number" class="form-control" id="mobile" placeholder="e.g 000-000-0000">
+            <input type="number" class="form-control" [(ngModel)]="i.mobile" placeholder="e.g 000-000-0000">
           </div>
         </div>
 
@@ -105,14 +107,14 @@
           </div>
 
           <div class="col-sm-3">
-            <input type="email" class="form-control" id="email" placeholder="e.g abc@test.com">
+            <input type="email" class="form-control" [(ngModel)]="i.email" placeholder="e.g abc@test.com">
           </div>
         </div>
 
       </fieldset>
 
       <div class="input">
-        <button type="submit" class="btn btn-primary custom">Submit Information</button>
+        <button type="submit" (click)="createItem()" class="btn btn-primary custom">Submit Information</button>
       </div>
     </div>
   </fieldset>
