@@ -1,0 +1,27 @@
+.btn{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.container{
+  /*margin-top: 6%;*/
+  /*background-color: lightgray;*/
+  padding: 0.5%;
+  padding-bottom:1%;
+}
+.btn{
+  margin-top: 2em;
+  /*width: 40%;*/
+}
+textarea{
+  width: 100%;
+}
+select{
+  width: 100%;
+}
+.row{
+  margin-top: 0.5em;
+}
+#bttn{
+  margin-top: 0em;
+  width: 100%;
+}

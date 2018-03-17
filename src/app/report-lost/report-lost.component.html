@@ -1,0 +1,119 @@
+<div class="container">
+  <fieldset>
+    <div align="center"><h2>Report Lost Items</h2></div>
+
+    <div class="signin-form">
+
+        <fieldset>
+          <legend>Item Description</legend>
+
+          <div class="row">
+            <div class="col-sm-3" >
+              <label>Item:</label>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="item" value="Lost" disabled>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3" >
+              <label>Item Type:</label>
+            </div>
+            <div class="col-sm-3">
+              <select placeholder="Item type">
+                <option *ngFor="let t of itypes" [value]="t.value">
+                  {{ t.viewValue }}
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="desc">Item Description:</label>
+            </div>
+            <div class="col-sm-3">
+              <textarea id="desc" placeholder="e.g company,type..."></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="venue">Vanue Lost:</label>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="venue" placeholder="e.g Library">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="date">Date Lost:</label>
+            </div>
+            <div class="col-sm-3">
+              <input type="date" class="form-control" id="date" placeholder="e.g Library">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <label>Image:</label>
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-light custom" id="bttn" color="light">
+                <span  class="glyphicon glyphicon-folder-open" style="margin-right:0.5em" ></span>
+                Upload Image
+              </button>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+
+        <legend>Contact Information</legend>
+
+        <div class="row">
+
+          <div class="col-sm-3">
+            <label for="name">Full Name:</label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="name" placeholder="e.g Full Name">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-3">
+            <label for="mobile">Mobile Number:</label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="mobile" placeholder="e.g 000-000-0000">
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-3">
+            <label>Email:</label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="email" class="form-control" id="email" placeholder="e.g abc@test.com">
+          </div>
+        </div>
+
+      </fieldset>
+
+      <div class="input">
+        <button type="submit" class="btn btn-primary custom">Submit Information</button>
+      </div>
+    </div>
+  </fieldset>
+</div>

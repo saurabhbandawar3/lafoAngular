@@ -1,0 +1,36 @@
+body{
+  background-color: lightgray;
+  min-height: 100vh;
+}
+nav{
+  display:block ;
+  /*//display: flex;*/
+  /*//flex-direction: column;*/
+  /*width: 70%;*/
+  border: white;
+}
+.logo{
+  margin-left: 1%;
+}
+.head{
+  background: white;
+  padding: 1em;
+  display: flex;
+}
+.title-head{
+  font-family: 'Noto Serif', serif;
+  font-size: 40px;
+  margin-left: 4%;
+  margin-top: 3.5%;
+}
+main{
+  /*width: 70%;*/
+  background-color: lightgray;
+  min-height: 60vh;
+}
+/*footer{*/
+  /*padding: 0.2em;*/
+  /*margin-top: 1.2em;*/
+  /*background: #222222;*/
+  /*color: white;*/
+/*}*/
