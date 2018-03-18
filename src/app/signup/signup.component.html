@@ -2,24 +2,29 @@
   <fieldset>
     <legend>Sign Up</legend>
     <div class="signin-form">
+
       <div class="form-group">
         <label for="name">Full Name:</label>
-        <input type="text" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" [(ngModel)]="user.fname">
       </div>
+
       <div class="form-group">
-        <label for="usr">Username:</label>
-        <input type="text" class="form-control" id="usr">
+        <label for="usr">Email:</label>
+        <input type="text" class="form-control" id="usr" [(ngModel)]="user.email">
       </div>
+
       <div class="form-group">
         <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
+        <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password">
       </div>
+
       <div class="form-group">
         <label for="cpwd">Confirm Password:</label>
         <input type="password" class="form-control" id="cpwd">
       </div>
+
       <div class="input">
-        <button type="submit" class="btn btn-primary custom">Sign Up</button>
+        <button type="submit" class="btn btn-primary custom" (click)= "register(user)">Sign Up</button>
       </div>
     </div>
   </fieldset>
