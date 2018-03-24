@@ -9,10 +9,10 @@ import {AngularFireDatabase} from 'angularfire2/database';
   styleUrls: ['./search-found.component.css']
 })
 export class SearchFoundComponent implements OnInit {
-  itemListref$: Observable<any[]>;
+  itemList: Observable<any[]>;
   constructor( public db: AngularFireDatabase ) {
-    this.itemListref$ = this.db.list('/found').valueChanges();
-    console.log(this.itemListref$);
+    this.itemList = this.db.list('/found').valueChanges();
+    console.log(this.itemList);
   }
 
   ngOnInit() {
