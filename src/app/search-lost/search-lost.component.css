@@ -1,0 +1,11 @@
+.list-group{
+  padding: 2%;
+}
+.list-group-item{
+  padding: 1%;
+  display: flex;
+  justify-content: space-around;
+}
+.image{
+  padding-top: 5%;
+}

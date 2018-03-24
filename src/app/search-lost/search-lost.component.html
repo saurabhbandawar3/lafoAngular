@@ -1,3 +1,44 @@
-<p>
-  search-lost works!
-</p>
+<div class="list-group">
+
+  <div *ngFor="let item of itemListref$ | async" class="list-group-item list-group-item-action list-group-item-primary">
+
+    <div class="image">
+      <img src="../../assets/images/lafo1.png" class="img-circle" alt="Circular Image" width="100" height="100" >
+    </div>
+
+    <div>
+      <h2>Item Info
+    on</h2>
+      <div>
+        <label>Status : </label> <span> {{item.item}}</span>
+      </div>
+      <div>
+        <label>Type : </label> <span> {{item.itemType}}</span>
+      </div>
+      <div>
+        <label>Address Lost : </label><span> {{item.ivanue}}</span>
+      </div>
+      <div>
+        <label>Date Lost:  </label><span> {{item.dateLost}}</span>
+      </div>
+      <div>
+        <label>Item Description: </label> <span> {{item.idescription}}</span>
+      </div>
+    </div>
+
+    <div>
+      <h2>Contact Information: </h2>
+      <div>
+        <label>Name : </label><span> {{item.uname}}</span>
+      </div>
+      <div>
+        <label>Mobile: </label><span> {{item.mobile}}</span>
+      </div>
+      <div>
+        <label>Email: </label><span> {{item.email}}</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
