@@ -2,6 +2,7 @@
   <fieldset>
     <legend>SignIn</legend>
     <div class="signin-form">
+
       <div class="form-group">
         <label for="usr">Email:</label>
         <input type="text" class="form-control" id="usr" [(ngModel)]="user.email">
@@ -10,10 +11,11 @@
         <label for="pwd" >Password:</label>
         <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password">
       </div>
-      <div class="input">
+      <div class="form-group">
         <button type="submit" class="btn btn-primary custom" (click)= "login(user)">Sign In</button>
         <button type="submit" class="btn btn-primary custom" [routerLink]="['/signup']" >Sign Up</button>
       </div>
+
     </div>
   </fieldset>
 </div>
