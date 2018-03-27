@@ -4,11 +4,11 @@ body{
 }
 nav{
   display:block ;
+  width: 70%;
+  border:1px solid black;
+  margin: 0 auto;
   /*//display: flex;*/
   /*//flex-direction: column;*/
-  /*width: 70%;*/
-  border: white;
-  /*margin: 0 auto;*/
 }
 .logo{
   margin-left: 1%;
@@ -25,10 +25,11 @@ nav{
   margin-top: 3.5%;
 }
 main{
-  /*margin: 0 auto;*/
-  /*width: 70%;*/
+  margin: 0 auto;
+  width: 70%;
   background-color: lightgray;
   min-height: 60vh;
+  border:1px solid black;
 }
 /*footer{*/
   /*padding: 0.2em;*/
