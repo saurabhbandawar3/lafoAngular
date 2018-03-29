@@ -21,6 +21,7 @@ select{
   margin-top: 1%;
 }
 #bttn{
+  padding: 0;
   margin-left: 0%;
   margin-top: 0em;
   width: 100%;

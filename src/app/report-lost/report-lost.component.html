@@ -64,9 +64,11 @@
             <label>Image:</label>
           </div>
           <div class="col-sm-6">
-            <button class="btn btn-light custom" id="bttn" color="light">
-              <span  class="glyphicon glyphicon-folder-open" style="margin-right:0.5em" ></span>
-              Upload Image
+            <label class="upload-group">
+              <input type="file" class="upload-group" id="file" (change)="imageSelected($event)">
+            </label>
+            <button class="btn btn-light custom" id="bttn" color="light" (click)="upload()">
+              Submit
             </button>
           </div>
         </div>

@@ -14,8 +14,10 @@ export class ReportFoundComponent implements OnInit {
     {value: 'Electronic', viewValue: 'Electronic'},
     {value: 'Other', viewValue: 'Other'}
   ];
-  url: any;
+  iurl: any;
+
   i = {} as Item;
+
 
   constructor( private afs: AngularFirestore,
                private db: AngularFireDatabase,
@@ -23,7 +25,13 @@ export class ReportFoundComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  upload() {
+    console.log('inUploadFile');
+  }
+  imageSelected(event: any) {
+    const file: File = event.target.files[0];
+    console.log(file);
+  }
   createItem() {
     console.log(this.i);
     this.db.list('/found/').push(this.i).then(() => {
