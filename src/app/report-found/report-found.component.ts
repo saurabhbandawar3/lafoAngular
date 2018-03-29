@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Item} from '../../models/item';
+import * as firebase from 'firebase';
+import { storage } from 'firebase';
 
 @Component({
   selector: 'app-report-found',
@@ -10,32 +12,36 @@ import {Item} from '../../models/item';
   styleUrls: ['./report-found.component.css']
 })
 export class ReportFoundComponent implements OnInit {
-  itypes = [
-    {value: 'Electronic', viewValue: 'Electronic'},
-    {value: 'Other', viewValue: 'Other'}
-  ];
-  iurl: any;
-
   i = {} as Item;
+  url: any;
+  file: File;
+  itypes = [
+    { value: 'Electronic', viewValue: 'Electronic' },
+    { value: 'Other', viewValue: 'Other' }
+  ];
 
-
-  constructor( private afs: AngularFirestore,
-               private db: AngularFireDatabase,
+  constructor( private db: AngularFireDatabase,
                private router: Router) {  }
 
   ngOnInit() {
   }
-  upload() {
-    console.log('inUploadFile');
-  }
   imageSelected(event: any) {
-    const file: File = event.target.files[0];
-    console.log(file);
+    this.file = event.target.files[0];
+    console.log(this.file);
   }
+
   createItem() {
-    console.log(this.i);
-    this.db.list('/found/').push(this.i).then(() => {
-      console.log('entery added');
+    const fileName = this.file.name;
+    const storageRef = firebase.storage().ref('/images/lost' + fileName);
+    const uploadTask = storageRef.put(this.file);
+    const s = uploadTask.on('state_changed', function (snapshot) {
+    }, function (error) {
+    }, function () {
+      this.url = uploadTask.snapshot.downloadURL;
+      console.log(this.url);
+      this.db.list('/lost/').push(this.i).then(() => {
+        console.log('entery added');
+      });
     });
   }
 }

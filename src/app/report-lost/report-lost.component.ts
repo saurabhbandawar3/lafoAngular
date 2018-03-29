@@ -18,8 +18,6 @@ export class ReportLostComponent implements OnInit {
   i = {} as Item;
   url: any;
   file: File;
-  // tslint:disable-next-line:max-line-length
-  u = 'https://firebasestorage.googleapis.com/v0/b/mangulardb.appspot.com/o/images%2Flostmistro%20blue%20logo%20VA%2010July2017.png?alt=media&token=362c8cce-b652-4cfb-acb0-6c6fc3cd4abe';
   itypes = [
     {value: 'Electronic', viewValue: 'Electronic'},
     {value: 'Other', viewValue: 'Other'}
@@ -36,26 +34,18 @@ export class ReportLostComponent implements OnInit {
     console.log(this.file);
   }
 
-  upload() {
-    console.log('In Upload');
+  createItem() {
     const fileName = this.file.name;
     const storageRef = firebase.storage().ref('/images/lost' + fileName);
     const uploadTask = storageRef.put(this.file);
-    const s = uploadTask.on('state_changed', function(snapshot) {
+    const s = uploadTask.on('state_changed', function (snapshot) {
     }, function (error) {
-           console.log(error);
-    }, function() {
+    }, function () {
       this.url = uploadTask.snapshot.downloadURL;
       console.log(this.url);
-    });
-    console.log(s);
-  }
-
-  createItem() {
-    this.i.iurl = this.u;
-    console.log(this.i);
-    this.db.list('/lost/').push(this.i).then(() => {
-      console.log('entery added');
+      this.db.list('/lost/').push(this.i).then(() => {
+        console.log('entery added');
+      });
     });
   }
 }
