@@ -18,6 +18,7 @@ export class ReportLostComponent implements OnInit {
   i = {} as Item;
   url: any;
   file: File;
+  getImgUrl: any;
   itypes = [
     {value: 'Electronic', viewValue: 'Electronic'},
     {value: 'Other', viewValue: 'Other'}
@@ -32,20 +33,30 @@ export class ReportLostComponent implements OnInit {
   imageSelected(event: any) {
     this.file = event.target.files[0];
     console.log(this.file);
+    this.getImgUrl = function (file) {
+      this.storage.child('images/' + file + '.png').getDownloadURL().then(function (url) {
+        return url;
+      }).catch(function (error) {
+        // Handle any errors here
+      });
+    };
+    console.log(this.getImgUrl);
   }
 
   createItem() {
     const fileName = this.file.name;
-    const storageRef = firebase.storage().ref('/images/lost' + fileName);
+    const storageRef = firebase.storage().ref('/images/lost/' + fileName);
     const uploadTask = storageRef.put(this.file);
-    const s = uploadTask.on('state_changed', function (snapshot) {
+    uploadTask.on('state_changed', function (snapshot) {
     }, function (error) {
     }, function () {
       this.url = uploadTask.snapshot.downloadURL;
       console.log(this.url);
-      this.db.list('/lost/').push(this.i).then(() => {
-        console.log('entery added');
-      });
+    });
+ 
+    this.db.list('/lost/').push(this.i).then(() => {
+      console.log('entery added');
+      this.router.navigate(['/slost']);
     });
   }
 }
