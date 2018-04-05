@@ -1,9 +1,13 @@
 .btn{
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 43.5%;
+  padding-right: 43.5%;
 }
 .container{
-  /*margin-top: 6%;*/
-  /*background-color: lightgray;*/
-  padding: 4%;
+  margin-top: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 2%;
+  width: 40%;
+  border-right: 1px solid white;
+  margin-bottom: 3%;
 }

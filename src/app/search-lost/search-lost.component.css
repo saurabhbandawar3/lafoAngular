@@ -1,5 +1,9 @@
 .list-group{
-  padding: 2%;
+ padding-top: 2%;
+ padding-bottom:2%;
+ width: 70%;
+ margin-left: 8%;
+
 }
 .list-group-item{
   padding: 1%;
