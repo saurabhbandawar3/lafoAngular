@@ -13,7 +13,7 @@ nav{
 }
 .head{
   background: white;
-  padding: 1em;
+  padding: 2%;
   display: flex;
 }
 .title-head{
@@ -29,9 +29,10 @@ main{
   min-height: 60vh;
   border:1px solid black;
 }
-footer{
-  padding: 0.2em;
-  margin-top: 1.2em;
+.footer{
+  margin: 0 auto;
+  padding: 1.5%;
   background: #222222;
   color: white;
+  width: 70%;
 }

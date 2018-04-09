@@ -16,6 +16,18 @@ import * as firebase from 'firebase';
 })
 export class ReportLostComponent implements OnInit {
   i = {} as Item;
+  // i: Item = {
+  //   item: '',
+  //   itemType: '',
+  //   idescription: '',
+  //   ivanue: '',
+  //   dateLost: '',
+  //   iurl: '',
+  //   uname: '',
+  //   email: '',
+  //   mobile: 0
+  // };
+
   url: any;
   file: File;
   getImgUrl: any;
@@ -49,14 +61,14 @@ export class ReportLostComponent implements OnInit {
     const uploadTask = storageRef.put(this.file);
     uploadTask.on('state_changed', function (snapshot) {
     }, function (error) {
-    }, function () {
+    },  () => {
       this.url = uploadTask.snapshot.downloadURL;
-      console.log(this.url);
-    });
- 
-    this.db.list('/lost/').push(this.i).then(() => {
-      console.log('entery added');
-      this.router.navigate(['/slost']);
+      console.log('Url:::::::', this.url);
+      this.i.iurl = this.url;
+      this.db.list('/lost/').push(this.i).then(() => {
+        console.log('entery added');
+        this.router.navigate(['/slost']);
+      });
     });
   }
 }
