@@ -19,6 +19,9 @@ import { HomeComponent } from './home/home.component';
 import { SearchFoundComponent } from './search-found/search-found.component';
 import { SearchLostComponent } from './search-lost/search-lost.component';
 
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 const appRoutes: Routes = [
   {
@@ -73,6 +76,9 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // debugging purpose

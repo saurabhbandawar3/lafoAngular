@@ -36,17 +36,14 @@ export class ReportFoundComponent implements OnInit {
     const uploadTask = storageRef.put(this.file);
     const s = uploadTask.on('state_changed', function (snapshot) {
     }, function (error) {
-    }, function () {
-      return uploadTask.snapshot.downloadURL;
-    });
-
-    // const getImageUrl = function (time) {
-    //   return firebase.storage().ref('images/' + fileName).getDownloadURL();
-    // };
-
-    this.db.list('/found/').push(this.i).then(() => {
-      console.log('entery added');
-      this.router.navigate(['/sfound']);
+    },  () => {
+      this.url = uploadTask.snapshot.downloadURL;
+      console.log('Url:::::::', this.url);
+      this.i.iurl = this.url;
+      this.db.list('/found/').push(this.i).then(() => {
+        console.log('entery added');
+        this.router.navigate(['/sfound']);
+      });
     });
   }
 }

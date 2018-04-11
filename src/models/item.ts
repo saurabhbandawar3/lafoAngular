@@ -4,7 +4,7 @@ export interface Item {
     idescription: string;
     ivanue: string;
     dateLost: string;
-    iurl: Promise<any>;
+    iurl: string;
     uname: string;
     email: string;
     mobile: number;
