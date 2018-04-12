@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {Router} from '@angular/router';
-import {SearchFoundComponent} from '../search-found/search-found.component';
+
+
 
 @Component({
   selector: 'app-home',
@@ -19,13 +20,13 @@ export class HomeComponent implements OnInit {
   async login(user) {
     try {
       const result = await this.aAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-      console.log(result);
       if (result) {
         console.log('user logged in');
         this.router.navigate(['/slost']);
       }
     } catch (e) {
       console.log(e);
+      window.alert(e.message);
     }
   }
 }
