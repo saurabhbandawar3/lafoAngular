@@ -3,10 +3,26 @@
   padding-right: 17.5%;
 }
 .container{
+  display: flex;
+}
+.left {
   margin-top: 5%;
   margin-left: 3%;
   margin-right: 3%;
   padding: 2%;
   width: 50%;
   border-right: 1px solid white;
+}
+.right{
+  width: 50%;
+  margin-top: 14  %;
+}
+#btngmail{
+  padding-left: 17.5%;
+  padding-right: 17.5%;
+}
+#btnfb{
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 5%;
 }
