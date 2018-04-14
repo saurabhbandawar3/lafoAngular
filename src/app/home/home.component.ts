@@ -19,14 +19,14 @@ export class HomeComponent implements OnInit {
   constructor(private aAuth: AngularFireAuth,
               private router: Router,
               public toastr: ToastsManager,
-              private vRef: ViewContainerRef, ) {
+              private vRef: ViewContainerRef ) {
     this.toastr.setRootViewContainerRef(vRef);
   }
 
   ngOnInit() {
     this.aAuth.authState.subscribe(data => {
       if (data && data.email && data.uid) {
-        //console.log('Data is:::::' , data.email);
+        // console.log('Data is:::::' , data.email);
         this.toastr.success(data.email)
           .then((toast) => {
             setTimeout(() => {
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
       });
     } catch (e) {
       console.log(e);
-      alert(e.message);
+      window.alert(e.message);
     }
   }
 
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
       });
     } catch (e) {
         console.log(e);
-        alert(e.message);
+        window.alert(e.message);
       }
     }
 
@@ -74,11 +74,13 @@ export class HomeComponent implements OnInit {
         if (rfb) {
           console.log('user logged in');
           this.router.navigate(['/slost']);
+        } else {
+          window.alert('Please try another ');
         }
       });
     } catch (e) {
       console.log(e);
-      alert(e.message);
+      window.alert(e.message);
     }
   }
 }
