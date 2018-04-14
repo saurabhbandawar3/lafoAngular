@@ -69,7 +69,7 @@ export class ReportLostComponent implements OnInit {
         // Handle any errors here
       });
     };
-    console.log(this.getImgUrl);
+    console.log(this.getImgUrl.value);
   }
 
   createItem() {
@@ -94,11 +94,11 @@ export class ReportLostComponent implements OnInit {
               });
             });
           } else {
-            this.toastr.error('Please LogIn First', 'Oops!');
-            this.router.navigate(['']);
+            this.toastr.error('Please SignIn', 'Oops!', 10000).then(() => {
+              this.router.navigate(['']);
+            });
           }
         });
-
       }
     } catch (e) {
       window.alert(e);

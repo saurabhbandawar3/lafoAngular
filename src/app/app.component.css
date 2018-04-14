@@ -7,6 +7,7 @@ nav{
   width: 70%;
   border:1px solid black;
   margin: 0 auto;
+  margin-top: 1%;
 }
 .logo{
   margin-left: 1%;
@@ -15,6 +16,10 @@ nav{
   background: white;
   padding: 2%;
   display: flex;
+  width: 70%;
+  margin: 0 auto;
+  border:1px solid black;
+
 }
 .title-head{
   font-family: 'Noto Serif', serif;
@@ -28,6 +33,12 @@ main{
   background-color: lightgray;
   min-height: 60vh;
   border:1px solid black;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.container{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 .footer{
   margin: 0 auto;

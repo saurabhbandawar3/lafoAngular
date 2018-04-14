@@ -17,27 +17,12 @@ export class HomeComponent implements OnInit {
   user1: Observable<firebase.User>;
 
   constructor(private aAuth: AngularFireAuth,
-              private router: Router,
-              public toastr: ToastsManager,
-              private vRef: ViewContainerRef ) {
-    this.toastr.setRootViewContainerRef(vRef);
+              private router: Router
+               ) {
+    // this.toastr.setRootViewContainerRef(vRef);
   }
 
   ngOnInit() {
-    this.aAuth.authState.subscribe(data => {
-      if (data && data.email && data.uid) {
-        // console.log('Data is:::::' , data.email);
-        this.toastr.success(data.email)
-          .then((toast) => {
-            setTimeout(() => {
-              this.toastr.dismissToast(toast);
-            }, 10000);
-          });
-
-      } else {
-        this.toastr.error('Please LogIn First', 'Oops!');
-      }
-    });
   }
 
   async login(user) {
@@ -55,33 +40,23 @@ export class HomeComponent implements OnInit {
   }
 
   async loginWithGoogle() {
-    try {
-      const rgoogle = this.aAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(() => {
-        if (rgoogle) {
+      const rgoogle = await this.aAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(() => {
           console.log('user logged in');
           this.router.navigate(['/slost']);
-        }
-      });
-    } catch (e) {
+      }).catch((e) => {
         console.log(e);
         window.alert(e.message);
-      }
+      });
     }
 
   async loginWithfb() {
-    try {
-      const rfb = this.aAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(() => {
-        if (rfb) {
+      const rfb = await this.aAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(() => {
           console.log('user logged in');
           this.router.navigate(['/slost']);
-        } else {
-          window.alert('Please try another ');
-        }
+      }).catch((e) => {
+          console.log(e);
+          window.alert(e.message);
       });
-    } catch (e) {
-      console.log(e);
-      window.alert(e.message);
-    }
   }
 }
 
