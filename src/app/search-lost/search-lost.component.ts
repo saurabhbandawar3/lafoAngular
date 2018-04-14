@@ -13,7 +13,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 export class SearchLostComponent implements OnInit {
   itemList: Observable<any[]>;
   constructor(public db: AngularFireDatabase,
-              private afAuth: AngularFireAuth,
+              private aAuth: AngularFireAuth,
               public toastr: ToastsManager,
               private vRef: ViewContainerRef,
               ) {
@@ -23,7 +23,7 @@ export class SearchLostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(data => {
+    this.aAuth.authState.subscribe(data => {
       if (data && data.email && data.uid) {
         console.log('Data is:::::' , data.email);
         this.toastr.success(data.email)
