@@ -88,6 +88,26 @@ export class HomeComponent implements OnInit {
           window.alert(e.message);
       });
   }
+
+  // async loginWithgithub() {
+  //   const rfb = await this.aAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider()).then(() => {
+  //     console.log('user logged in');
+  //     this.aAuth.authState.subscribe(data => {
+  //       if (data && data.email && data.uid) {
+  //         this.toastr.success(data.email)
+  //           .then((toast) => {
+  //             setTimeout(() => {
+  //               this.toastr.dismissToast(toast);
+  //               this.router.navigate(['/slost']);
+  //             }, 5000);
+  //           });
+  //       }
+  //     });
+  //   }).catch((e) => {
+  //     console.log(e);
+  //     window.alert(e.message);
+  //   });
+  // }
 }
 
 

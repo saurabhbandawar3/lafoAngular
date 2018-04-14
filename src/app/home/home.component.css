@@ -18,12 +18,19 @@
   margin-top: 14%;
 }
 #btngmail{
-  padding-left: 17.5%;
-  padding-right: 17.5%;
+  padding-left: 17%;
+  padding-right: 17%;
 }
 #btnfb{
-  padding-left: 16%;
-  padding-right: 16%;
+  padding-left: 15.2%;
+  padding-right: 15.2%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
+/*#btngit{*/
+  /*padding-left: 17.5%;*/
+  /*padding-right: 17.5%;*/
+  /*background: #222222;*/
+  /*color: #FFFFFF;*/
+/*}*/
