@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
   user1: Observable<firebase.User>;
 
   constructor(private aAuth: AngularFireAuth,
-              private router: Router
-               ) {
-    // this.toastr.setRootViewContainerRef(vRef);
+              private router: Router,
+              public toastr: ToastsManager,
+              private vRef: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vRef);
   }
 
   ngOnInit() {
@@ -28,10 +29,18 @@ export class HomeComponent implements OnInit {
   async login(user) {
     try {
       const result = await this.aAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
-        if (result) {
           console.log('user logged in');
-          this.router.navigate(['/slost']);
-        }
+          this.aAuth.authState.subscribe(data => {
+            if (data && data.email && data.uid) {
+              this.toastr.success(data.email)
+                .then((toast) => {
+                  setTimeout(() => {
+                    this.toastr.dismissToast(toast);
+                    this.router.navigate(['/slost']);
+                  }, 5000);
+                });
+            }
+          });
       });
     } catch (e) {
       console.log(e);
@@ -41,8 +50,19 @@ export class HomeComponent implements OnInit {
 
   async loginWithGoogle() {
       const rgoogle = await this.aAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(() => {
-          console.log('user logged in');
-          this.router.navigate(['/slost']);
+        console.log('user logged in');
+        this.aAuth.authState.subscribe(data => {
+          if (data && data.email && data.uid) {
+            this.toastr.success(data.email)
+              .then((toast) => {
+                setTimeout(() => {
+                  this.toastr.dismissToast(toast);
+                  this.router.navigate(['/slost']);
+                }, 5000);
+              });
+          }
+        });
+
       }).catch((e) => {
         console.log(e);
         window.alert(e.message);
@@ -52,7 +72,17 @@ export class HomeComponent implements OnInit {
   async loginWithfb() {
       const rfb = await this.aAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(() => {
           console.log('user logged in');
-          this.router.navigate(['/slost']);
+        this.aAuth.authState.subscribe(data => {
+          if (data && data.email && data.uid) {
+            this.toastr.success(data.email)
+              .then((toast) => {
+                setTimeout(() => {
+                  this.toastr.dismissToast(toast);
+                  this.router.navigate(['/slost']);
+                }, 5000);
+              });
+          }
+        });
       }).catch((e) => {
           console.log(e);
           window.alert(e.message);
