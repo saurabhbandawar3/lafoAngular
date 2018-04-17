@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
           console.log('user logged in');
           this.aAuth.authState.subscribe(data => {
             if (data && data.email && data.uid) {
-              this.toastr.success(data.email)
+              this.toastr.success(data.email, 'Login Successful')
                 .then((toast) => {
                   setTimeout(() => {
                     this.toastr.dismissToast(toast);
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
         console.log('user logged in');
         this.aAuth.authState.subscribe(data => {
           if (data && data.email && data.uid) {
-            this.toastr.success(data.email)
+            this.toastr.success(data.email, 'Login Successful')
               .then((toast) => {
                 setTimeout(() => {
                   this.toastr.dismissToast(toast);
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
           console.log('user logged in');
         this.aAuth.authState.subscribe(data => {
           if (data && data.email && data.uid) {
-            this.toastr.success(data.email)
+            this.toastr.success(data.email ,'Login Successful')
               .then((toast) => {
                 setTimeout(() => {
                   this.toastr.dismissToast(toast);
