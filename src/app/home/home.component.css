@@ -20,6 +20,7 @@
 #btngmail{
   padding-left: 17%;
   padding-right: 17%;
+
 }
 #btnfb{
   padding-left: 15.2%;
@@ -34,3 +35,17 @@
   /*background: #222222;*/
   /*color: #FFFFFF;*/
 /*}*/
+@media only screen and (max-width: 600px) {
+ .container{
+   flex-direction: column;
+ }
+  .left {
+
+  }
+  .right{
+    border-right: 1px solid white;
+  }
+  .btn{
+    margin-bottom: 2%;
+  }
+}

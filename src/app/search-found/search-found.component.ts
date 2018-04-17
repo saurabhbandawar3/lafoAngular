@@ -26,7 +26,7 @@ export class SearchFoundComponent implements OnInit {
     this.afAuth.authState.subscribe(data => {
       if (data && data.email && data.uid) {
         // console.log('Data is:::::' , data.email);
-        this.toastr.success(data.email)
+        this.toastr.success(data.email, 'Login Successful')
           .then((toast) => {
             setTimeout(() => {
               this.toastr.dismissToast(toast);
