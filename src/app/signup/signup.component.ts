@@ -15,10 +15,10 @@ export class SignupComponent implements OnInit {
   @ViewChild('slideshow') slideshow: ElementRef;
   user = {} as User;
   imageUrls = [
-    ,
-    '../assets/images/2.jpg',
-    '../assets/images/3.png',
-    '../assets/images/4.png',
+    '1.jpg',
+    '2.jpg',
+    '3.png',
+    '4.png'
   ];
   constructor(private aAuth: AngularFireAuth,
               private router: Router) {
@@ -53,3 +53,6 @@ export class SignupComponent implements OnInit {
 
   }
 }
+
+
+
