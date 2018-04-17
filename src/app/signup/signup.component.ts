@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { User } from '../../models/user';
 import { AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
 import {HomeComponent} from '../home/home.component';
+
 
 
 @Component({
@@ -11,9 +12,14 @@ import {HomeComponent} from '../home/home.component';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  @ViewChild('slideshow') slideshow: ElementRef;
   user = {} as User;
-
+  imageUrls = [
+    ,
+    '../assets/images/2.jpg',
+    '../assets/images/3.png',
+    '../assets/images/4.png',
+  ];
   constructor(private aAuth: AngularFireAuth,
               private router: Router) {
   }

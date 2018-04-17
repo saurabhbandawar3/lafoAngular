@@ -54,7 +54,7 @@ export class ReportLostComponent implements OnInit {
           });
 
       } else {
-        this.toastr.error('Please LogIn First', 'Oops!');
+        this.toastr.error('Please Sign In First', 'Oops!');
       }
     });
   }
@@ -94,7 +94,7 @@ export class ReportLostComponent implements OnInit {
               });
             });
           } else {
-            this.toastr.error('Please SignIn', 'Oops!', 10000).then(() => {
+            this.toastr.error('Please Sign In', 'Oops!').then(() => {
               this.router.navigate(['']);
             });
           }

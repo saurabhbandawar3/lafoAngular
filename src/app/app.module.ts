@@ -20,6 +20,7 @@ import { SearchFoundComponent } from './search-found/search-found.component';
 import { SearchLostComponent } from './search-lost/search-lost.component';
 
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import {SlideshowModule} from 'ng-simple-slideshow';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     ToastModule.forRoot(),
+    SlideshowModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // debugging purpose
