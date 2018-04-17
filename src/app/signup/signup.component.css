@@ -1,10 +1,11 @@
 .main{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80%;
   margin-top: 3%;
   margin-left: 3%;
   margin-right: 3%;
+  height: 30%;
 }
 .container{
   margin-top: 3%;
@@ -14,25 +15,30 @@
   /*width: 40%;*/
   border-right: 1px solid white;
   margin-bottom: 3%;
+  padding-top: 6%;
 }
 .btn{
   padding-left: 43.5%;
   padding-right: 43.5%;
 }
 .slider{
-  margin-top: 8%;
+  margin-top: 10%;
 }
 .btn-left{
   margin-bottom: 2%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  /*padding-top: 1%;*/
+  /*padding-bottom: 2%;*/
   margin-left: 1%;
 }
 .btn-right{
   margin-bottom: 2%;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-left: 43%;
+  padding-left: 20%;
+  padding-right: 20%;
+  /*padding-top: 2%;*/
+  /*padding-bottom: 2%;*/
+  margin-left: 2%;
 }
 img{
   width:100%;

@@ -4,7 +4,7 @@ import { AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
 import {HomeComponent} from '../home/home.component';
 
-
+import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 
 @Component({
   selector: 'app-signup',
@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   async register(user: User) {
@@ -53,6 +54,7 @@ export class SignupComponent implements OnInit {
 
   }
 }
+
 
 
 
