@@ -3,6 +3,9 @@
   padding-right: 17.5%;
 }
 .container{
+  display: flex;
+}
+.left {
   margin-top: 5%;
   margin-left: 3%;
   margin-right: 3%;
@@ -10,3 +13,24 @@
   width: 50%;
   border-right: 1px solid white;
 }
+.right{
+  width: 50%;
+  margin-top: 14%;
+}
+#btngmail{
+  padding-left: 17%;
+  padding-right: 17%;
+}
+#btnfb{
+  padding-left: 15.2%;
+  padding-right: 15.2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/*#btngit{*/
+  /*padding-left: 17.5%;*/
+  /*padding-right: 17.5%;*/
+  /*background: #222222;*/
+  /*color: #FFFFFF;*/
+/*}*/

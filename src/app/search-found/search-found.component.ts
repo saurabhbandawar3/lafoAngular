@@ -25,7 +25,7 @@ export class SearchFoundComponent implements OnInit {
   ngOnInit() {
     this.afAuth.authState.subscribe(data => {
       if (data && data.email && data.uid) {
-        console.log('Data is:::::' , data.email);
+        // console.log('Data is:::::' , data.email);
         this.toastr.success(data.email)
           .then((toast) => {
             setTimeout(() => {

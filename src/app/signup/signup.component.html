@@ -1,4 +1,5 @@
-<div class="container" >
+<div class="main" >
+  <div class="container" >
   <fieldset>
     <legend>Sign Up</legend>
     <div class="signup-form">
@@ -26,7 +27,19 @@
       <div class="form-group">
         <button type="submit" class="btn btn-primary custom" (click)= "register(user)">Sign Up</button>
       </div>
-      
+
     </div>
   </fieldset>
+  </div>
+  <div class="slider">
+    <button (click)="carousel.left()" class="btn-left">Left</button>
+    <button (click)="carousel.right()" class="btn-right">Right</button>
+    <ngx-slideshow #carousel [cards]="1" [cardSize]="'410px'" [padding]="'5'">
+      <li *ngFor="let item of imageUrls"><img class="mySlides" src="../assets/images/{{item}}"></li>
+    </ngx-slideshow>
+  </div>
+
 </div>
+
+
+

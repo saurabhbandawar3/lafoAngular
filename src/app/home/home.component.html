@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="left">
   <fieldset>
     <legend>SignIn</legend>
     <div class="signin-form">
@@ -15,7 +16,14 @@
         <button type="submit" class="btn btn-primary custom" (click)= "login(user)">Sign In</button>
         <button type="submit" class="btn btn-primary custom" [routerLink]="['/signup']" >Sign Up</button>
       </div>
-
     </div>
   </fieldset>
 </div>
+  <div class="right">
+    <button type="button" class="btn btn-danger custom" (click)="loginWithGoogle()" id="btngmail">Sign In With Google</button>
+    <button type="button" class="btn btn-primary custom" (click)="loginWithfb()" id="btnfb">Sign In With Facebook</button>
+    <!--<button type="button" class="btn btn-default custom" (click)="loginWithgithub()" id="btngit">Sign In With Github</button>-->
+  </div>
+</div>
+
+

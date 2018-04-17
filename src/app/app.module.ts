@@ -21,7 +21,7 @@ import { SearchLostComponent } from './search-lost/search-lost.component';
 
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { NgxSlideshowModule } from 'ngx-slideshow';
 
 const appRoutes: Routes = [
   {
@@ -79,6 +79,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     ToastModule.forRoot(),
+    NgxSlideshowModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // debugging purpose

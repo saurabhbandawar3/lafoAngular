@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { User } from '../../models/user';
 import { AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
 import {HomeComponent} from '../home/home.component';
 
+import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 
 @Component({
   selector: 'app-signup',
@@ -11,14 +12,20 @@ import {HomeComponent} from '../home/home.component';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  @ViewChild('slideshow') slideshow: ElementRef;
   user = {} as User;
-
+  imageUrls = [
+    '1.jpg',
+    '2.jpg',
+    '3.png',
+    '4.png'
+  ];
   constructor(private aAuth: AngularFireAuth,
               private router: Router) {
   }
 
   ngOnInit() {
+
   }
 
   async register(user: User) {
@@ -47,3 +54,7 @@ export class SignupComponent implements OnInit {
 
   }
 }
+
+
+
+
