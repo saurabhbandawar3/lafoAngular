@@ -16,17 +16,21 @@
 .right{
   width: 50%;
   margin-top: 14%;
+  display: flex;
+  flex-direction: column;
 }
 #btngmail{
-  padding-left: 17%;
-  padding-right: 17%;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 50%;
 
 }
 #btnfb{
-  padding-left: 15.2%;
-  padding-right: 15.2%;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-top: 5%;
   margin-bottom: 5%;
+  width: 50%;
 }
 
 /*#btngit{*/
@@ -49,7 +53,7 @@
     margin-bottom: 2%;
   }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .container{
     flex-direction: column;
   }
