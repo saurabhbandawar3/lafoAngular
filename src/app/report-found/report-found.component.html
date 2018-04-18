@@ -23,7 +23,7 @@
             <label>Item Type:</label>
           </div>
           <div class="col-sm-6">
-            <select placeholder="Item type" [(ngModel)]="i.itemType">
+              <select placeholder="Item type" [(ngModel)]="i.itemType">
               <option *ngFor="let t of itypes" [value]="t.value">
                 {{ t.viewValue }}
               </option>
